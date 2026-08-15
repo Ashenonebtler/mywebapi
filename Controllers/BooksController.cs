@@ -9,18 +9,16 @@ namespace MyWebApi.Controllers
     
     public class BooksController : ControllerBase
     {
-        static private List<Book> books = new List<Book>
+        static private List<BookDto> books = new List<BookDto>
         {
-            new Book
+            new BookDto
             {
-                ID = 1,
                 Title = "The Amazing Spiderman",
                 Author = "Amo Stanly",
                 YearPublished = 2004
             },
-            new Book
+            new BookDto
             {
-                ID = 2,
                 Title = "Arkham Knight",
                 Author = "Gam3at Dc",
                 YearPublished = 2001
