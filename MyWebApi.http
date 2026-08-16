@@ -8,5 +8,5 @@ GET {{rootURL}}/api/BookDto
 Accept: application/json
 
 ###
-GET {{rootURL}}/api/Book/1
+GET {{rootURL}}/api/Book/3
 Accept: application/json

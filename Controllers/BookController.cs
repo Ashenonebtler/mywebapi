@@ -7,7 +7,7 @@ namespace MyWebApi.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        static private List<Book> books = new List<Book>
+         private static readonly List<Book> Books = new List<Book>
         {
             new Book
             {
@@ -22,26 +22,54 @@ namespace MyWebApi.Controllers
                 Title = "Arkham Knight",
                 Author = "Gam3at Dc",
                 YearPublished = 2001
+            },
+            new Book
+            {
+                Id = 3,
+                Title = "The Hobbit",
+                Author = "J.R.R. Tolkien",
+                YearPublished = 1937
+            },
+            new Book
+            {
+                Id = 4,
+                Title = "Dune",
+                Author = "Frank Herbert",
+                YearPublished = 1965
+            },
+            new Book
+            {
+                Id = 5,
+                Title = "1984",
+                Author = "George Orwell",
+                YearPublished = 1949
+            },
+            new Book
+            {
+                Id = 6,
+                Title = "The Hitchhiker's Guide to the Galaxy",
+                Author = "Douglas Adams",
+                YearPublished = 1979
             }
         };
-
+        
         [HttpGet("{id}")]
-        public ActionResult<List<BookDto>> GetBookById(int id)
+        public ActionResult<BookDto> GetBookById(int id)
         {
-            var book = books.FirstOrDefault((x) => x.Id == id);
+            var book = Books.FirstOrDefault((x) => x.Id == id);
             if (book == null)
             {
                 return NotFound();
             }
             else
             {
-                var bookbid = new BookDto()
+                var bookById = new BookDto()
                 {
                     Title = book.Title,
                     Author = book.Author,
                     YearPublished = book.YearPublished,
                 };
-                return Ok(bookbid);
+                return Ok(bookById);
             }
         }
         
