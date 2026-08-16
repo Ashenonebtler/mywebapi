@@ -6,7 +6,7 @@ namespace MyWebApi.Controllers
     [Route ("api/[controller]")]
     [ApiController]
     
-    public class BooksController : ControllerBase
+    public class BookDtoController : ControllerBase
     {
         static private List<BookDto> books = new List<BookDto>
         {
@@ -27,6 +27,6 @@ namespace MyWebApi.Controllers
         public ActionResult<List<Book>> GetBooks()
         {
             return Ok(books);
-        }   
+        }
     }
 }

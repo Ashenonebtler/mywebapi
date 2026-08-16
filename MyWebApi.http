@@ -4,5 +4,9 @@ GET {{rootURL}}/weatherforecast/
 Accept: application/json
 
 ###
-GET {{rootURL}}/api/Books
+GET {{rootURL}}/api/BookDto
+Accept: application/json
+
+###
+GET {{rootURL}}/api/Books/1
 Accept: application/json
