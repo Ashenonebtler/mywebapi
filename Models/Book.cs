@@ -2,9 +2,10 @@ namespace MyWebApi.Models
 {
     public class Book
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Title { get;  set;}= null!;
         public string Author { get; set; } = null!;
         public int YearPublished { get; set; }
+        public string InternalNotes { get; set; } = null!;
     }
 }
