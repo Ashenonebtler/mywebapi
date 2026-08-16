@@ -3,7 +3,7 @@ using MyWebApi.Models;
 
 namespace MyWebApi.Controllers
 {
-    [Route("api/controller")]
+    [Route("api/[controller]")]
     [ApiController]
     public class BookController : ControllerBase
     {
@@ -25,7 +25,7 @@ namespace MyWebApi.Controllers
             }
         };
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public ActionResult<List<Book>> GetBookById(int id)
         {
             var book = books.FirstOrDefault((x) => x.Id == id);
