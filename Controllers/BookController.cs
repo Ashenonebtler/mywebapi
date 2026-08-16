@@ -26,7 +26,7 @@ namespace MyWebApi.Controllers
         };
 
         [HttpGet("{id}")]
-        public ActionResult<List<Book>> GetBookById(int id)
+        public ActionResult<List<BookDto>> GetBookById(int id)
         {
             var book = books.FirstOrDefault((x) => x.Id == id);
             if (book == null)
@@ -35,7 +35,13 @@ namespace MyWebApi.Controllers
             }
             else
             {
-                return Ok(book);
+                var bookbid = new BookDto()
+                {
+                    Title = book.Title,
+                    Author = book.Author,
+                    YearPublished = book.YearPublished,
+                };
+                return Ok(bookbid);
             }
         }
         
